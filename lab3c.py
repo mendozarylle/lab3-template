@@ -12,28 +12,22 @@ Usage:
 
 Description:
 """
-
 def operate(number1, number2, operator):
-    # Place logic in this function
     if operator == 'add':
-        result = number1 + number2
+        return number1 + number2
     elif operator == 'subtract':
-        result = number1 - number2
+        return number1 - number2
     elif operator == 'multiply':
-        result = number1 * number2
-    elif operator == 'divide':
-        # Assuming you want to handle division as well
-        if number2 != 0:
-            result = number1 / number2
-        else:
-            result = 'Error: Division by zero is not allowed'
+        return number1 * number2
     else:
-        result = 'Error: function operator can be "add", "subtract", or "multiply"'
+        return 'Error: function operator can be "add", "subtract", or "multiply"'  # Error for unrecognized operators
 
-    return result
-    
 if __name__ == '__main__':
-    print(operate(10, 5, 'add'))
-    print(operate(10, 5, 'subtract'))
-    print(operate(10, 5, 'multiply'))
-    print(operate(10, 5, 'divide'))
+    print(operate(10, 20, 'add'))        # Expected output: 30
+    print(operate(2, 3, 'add'))          # Expected output: 5
+    print(operate(100, 5, 'subtract'))   # Expected output: 95
+    print(operate(10, 20, 'subtract'))   # Expected output: -10
+    print(operate(5, 5, 'multiply'))     # Expected output: 25
+    print(operate(10, 100, 'multiply'))  # Expected output: 1000
+    print(operate(100, 5, 'divide'))     # Expected output: Error message
+    print(operate(100, 5, 'power'))      # Expected output: Error message
